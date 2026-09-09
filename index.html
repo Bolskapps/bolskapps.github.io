@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolskapps — Estudio Indie de Videojuegos Móviles</title>
+  <meta name="description" content="Bolskapps es un estudio independiente especializado en crear juegos móviles arcade y deportivos como Chapas Clash.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    
+  :root {
+    --bg-main: #0a0e17;
+    --bg-card: rgba(20, 29, 47, 0.85);
+    --bg-card-hover: rgba(28, 41, 66, 0.95);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-glow: rgba(0, 230, 118, 0.35);
+    --accent: #00e676;
+    --accent-dark: #00b0ff;
+    --text-main: #f0f4f8;
+    --text-muted: #94a3b8;
+    --danger: #ff5252;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  body { background: var(--bg-main); color: var(--text-main); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+  a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #69f0ae; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+  /* Header */
+  header {
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.35rem; letter-spacing: 1px; color: #fff; text-decoration: none; }
+  .brand-badge { background: linear-gradient(135deg, #00e676, #00b0ff); color: #0a0e17; padding: 4px 10px; border-radius: 8px; font-size: 0.95rem; font-weight: 900; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; }
+  .nav-links a:hover, .nav-links a.active { color: #fff; }
+  .btn-contact { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border); padding: 8px 16px; border-radius: 20px; font-weight: 600; color: #fff !important; }
+  .btn-contact:hover { background: var(--accent); color: #0a0e17 !important; border-color: var(--accent); }
+
+  /* Footer */
+  footer {
+    background: #060910;
+    border-top: 1px solid var(--border);
+    padding: 48px 0 32px;
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-col h4 { color: #fff; margin-bottom: 16px; font-size: 1rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { color: var(--text-muted); }
+  .footer-col ul a:hover { color: var(--accent); }
+  .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .nav-links { gap: 12px; font-size: 0.85rem; }
+  }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 230, 118, 0.15) 0%, rgba(0, 176, 255, 0.05) 50%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(0, 230, 118, 0.12);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      border-radius: 30px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #00e676, #00c853);
+      color: #0a0e17 !important;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0, 230, 118, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 230, 118, 0.45);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #fff !important;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 12px;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Featured Game Card */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .game-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 60px;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .game-card:hover {
+      border-color: var(--border-glow);
+    }
+    .game-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .game-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    .game-info h3 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .game-info .tagline {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 20px;
+      border-radius: 14px;
+    }
+    .feature-item h4 {
+      color: #fff;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .game-footer-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .game-footer-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+    }
+
+    /* About Section */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .value-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .value-card h3 { color: #fff; margin-bottom: 8px; font-size: 1.2rem; }
+    .value-card p { color: var(--text-muted); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="brand">
+        <span class="brand-badge">B</span>
+        BOLSKAPPS
+      </a>
+      <nav class="nav-links">
+        <a href="#juegos">Juegos</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/borrado-cuenta.html">Eliminar Cuenta</a>
+        <a href="mailto:bolskapps@gmail.com" class="btn-contact">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="hero-tag">Estudio Indie de Videojuegos</span>
+      <h1>Juegos arcade clásicos para la era moderna</h1>
+      <p>Diseñamos experiencias móviles rápidas, competitivas y adictivas. Cuidamos cada detalle de la física, el rendimiento y la privacidad.</p>
+      <div class="hero-actions">
+        <a href="#juegos" class="btn-primary">⚽ Conoce Chapas Clash</a>
+        <a href="mailto:bolskapps@gmail.com" class="btn-secondary">Contactar con el estudio</a>
+      </div>
+    </section>
+
+    <section id="juegos">
+      <h2 class="section-title">🎮 Nuestros Videojuegos</h2>
+      <p class="section-subtitle">Títulos desarrollados con mimo y diseñados para competir.</p>
+
+      <div class="game-card">
+        <div class="game-header">
+          <div class="game-icon">⚽</div>
+          <div class="game-info">
+            <h3>Chapas Clash</h3>
+            <div class="tagline">Fútbol chapas arcade con físicas hiperrealistas y multijugador</div>
+          </div>
+        </div>
+
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Revive la emoción del clásico juego de fútbol con chapas en tu móvil. Apunta, calcula la fuerza y el rebote en la banda, supera al portero y marca el gol de la victoria en torneos mundiales y retos contra amigos.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <h4>⚡ Físicas Precisas</h4>
+            <p>Simulación realista de colisiones, masas, fricción de césped y efectos de rebote.</p>
+          </div>
+          <div class="feature-item">
+            <h4>🏆 Modo Mundial</h4>
+            <p>Compite en cuadros eliminatorios de 16 equipos hasta coronarte campeón del mundo.</p>
+          </div>
+          <div class="feature-item">
+            <h4>🌍 26 Selecciones</h4>
+            <p>Desbloquea y colecciona las equipaciones de tus países favoritos y diseños legendarios.</p>
+          </div>
+          <div class="feature-item">
+            <h4>🔥 Multijugador & Retos</h4>
+            <p>Agrega amigos con su código de jugador y compite en tiempo real para ver quién manda.</p>
+          </div>
+        </div>
+
+        <div class="game-footer-links">
+          <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 8px;">ENLACES OFICIALES:</span>
+          <a href="/privacidad.html">📋 Política de Privacidad</a>
+          <a href="/borrado-cuenta.html">🗑️ Solicitud de Borrado de Cuenta</a>
+          <a href="https://play.google.com/store/apps" target="_blank" style="background: rgba(0, 230, 118, 0.15); color: var(--accent);">Próximamente en Google Play</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🌟 Los Pilares de Bolskapps</h2>
+      <p class="section-subtitle">Cómo entendemos el desarrollo de aplicaciones y videojuegos móviles.</p>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="icon">🎯</div>
+          <h3>Jugabilidad Basada en Habilidad</h3>
+          <p>Nada de pay-to-win agresivo. Las partidas se deciden por tu puntería, tu estrategia táctica y tu maestría con los rebotes.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🔒</div>
+          <h3>Privacidad y Respeto</h3>
+          <p>No vendemos tus datos a nadie. Puedes jugar en modo invitado sin necesidad de registrarte, y tienes control total para borrar tus datos.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🚀</div>
+          <h3>Rendimiento a 60 FPS</h3>
+          <p>Código optimizado para que los juegos carguen al instante y funcionen con máxima fluidez en cualquier teléfono Android.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>BOLSKAPPS STUDIO</h4>
+          <p>Estudio de desarrollo indie de videojuegos y apps móviles.</p>
+          <p style="margin-top: 8px;">Contacto directo: <a href="mailto:bolskapps@gmail.com">bolskapps@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>JUEGOS</h4>
+          <ul>
+            <li><a href="#juegos">Chapas Clash</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>LEGAL & TRANSPARENCIA</h4>
+          <ul>
+            <li><a href="/privacidad.html">Política de Privacidad</a></li>
+            <li><a href="/borrado-cuenta.html">Eliminación de Cuenta</a></li>
+            <li><a href="/app-ads.txt">AdMob app-ads.txt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Bolskapps. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

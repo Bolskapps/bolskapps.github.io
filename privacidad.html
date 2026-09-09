@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — Chapas Clash | Bolskapps</title>
+  <meta name="description" content="Política de privacidad oficial de Chapas Clash desarrollada por Bolskapps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    
+  :root {
+    --bg-main: #0a0e17;
+    --bg-card: rgba(20, 29, 47, 0.85);
+    --bg-card-hover: rgba(28, 41, 66, 0.95);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-glow: rgba(0, 230, 118, 0.35);
+    --accent: #00e676;
+    --accent-dark: #00b0ff;
+    --text-main: #f0f4f8;
+    --text-muted: #94a3b8;
+    --danger: #ff5252;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  body { background: var(--bg-main); color: var(--text-main); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+  a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #69f0ae; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+  /* Header */
+  header {
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.35rem; letter-spacing: 1px; color: #fff; text-decoration: none; }
+  .brand-badge { background: linear-gradient(135deg, #00e676, #00b0ff); color: #0a0e17; padding: 4px 10px; border-radius: 8px; font-size: 0.95rem; font-weight: 900; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; }
+  .nav-links a:hover, .nav-links a.active { color: #fff; }
+  .btn-contact { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border); padding: 8px 16px; border-radius: 20px; font-weight: 600; color: #fff !important; }
+  .btn-contact:hover { background: var(--accent); color: #0a0e17 !important; border-color: var(--accent); }
+
+  /* Footer */
+  footer {
+    background: #060910;
+    border-top: 1px solid var(--border);
+    padding: 48px 0 32px;
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-col h4 { color: #fff; margin-bottom: 16px; font-size: 1rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { color: var(--text-muted); }
+  .footer-col ul a:hover { color: var(--accent); }
+  .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .nav-links { gap: 12px; font-size: 0.85rem; }
+  }
+
+    .content-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0 80px;
+      backdrop-filter: blur(10px);
+    }
+    .content-box h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .meta-tag { display: inline-block; padding: 4px 12px; background: rgba(0, 230, 118, 0.1); border: 1px solid rgba(0, 230, 118, 0.2); border-radius: 20px; color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; }
+    .content-box h2 { font-size: 1.4rem; font-weight: 700; margin: 32px 0 16px; color: #fff; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 8px; }
+    .content-box h3 { font-size: 1.15rem; font-weight: 600; margin: 20px 0 8px; color: var(--accent); }
+    .content-box p, .content-box li { color: #cbd5e1; font-size: 1rem; margin-bottom: 12px; }
+    .content-box ul { padding-left: 24px; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 16px; text-align: left; }
+    th { background: rgba(255, 255, 255, 0.05); color: #fff; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="brand">
+        <span class="brand-badge">B</span>
+        BOLSKAPPS
+      </a>
+      <nav class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/privacidad.html" class="active">Privacidad</a>
+        <a href="/borrado-cuenta.html">Eliminar Cuenta</a>
+        <a href="mailto:bolskapps@gmail.com" class="btn-contact">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="content-box">
+      <span class="meta-tag">Última actualización: 9 de septiembre de 2026</span>
+      <h1>Política de Privacidad de Chapas Clash</h1>
+      <p>Responsable del tratamiento: <strong>Bolskapps</strong> | Contacto: <a href="mailto:bolskapps@gmail.com">bolskapps@gmail.com</a></p>
+
+      <h2>1. Resumen</h2>
+      <p>Chapas Clash es un juego gratuito que se financia con publicidad y compras opcionales dentro de la aplicación. Principios clave:</p>
+      <ul>
+        <li><strong>No vendemos tus datos personales.</strong></li>
+        <li><strong>No solicitamos permisos invasivos:</strong> ni ubicación exacta, ni acceso a contactos, ni micrófono.</li>
+        <li>Puedes jugar <strong>sin registrarte</strong>, accediendo como invitado.</li>
+        <li>En Europa, la publicidad personalizada y la analítica <strong>solo se activan si tú las aceptas</strong> expresamente en el aviso inicial de consentimiento.</li>
+      </ul>
+
+      <h2>2. Qué datos se tratan</h2>
+      <h3>2.1. Datos de la cuenta</h3>
+      <p>Si creas una cuenta con correo o Google, Firebase Authentication gestiona de forma cifrada tus credenciales. Tu dirección de correo nunca se comparte con otros jugadores ni se muestra en tu perfil público.</p>
+
+      <h3>2.2. Datos del perfil de jugador</h3>
+      <p>En Firebase Firestore se guardan los datos necesarios para las partidas y la lista de amigos: nombre de jugador, código de amigo, nivel, trofeos, estadísticas de partidos, monedas y equipos desbloqueados.</p>
+
+      <h3>2.3. Publicidad (Google AdMob)</h3>
+      <p>Trata el identificador de publicidad del dispositivo, información técnica de conexión e interacciones con los anuncios. Si no aceptas publicidad personalizada, seguirás viendo anuncios genéricos no personalizados.</p>
+
+      <h3>2.4. Analítica y Errores</h3>
+      <p><strong>Firebase Analytics</strong> recoge métricas agregadas de uso solo si las aceptas. <strong>Firebase Crashlytics</strong> recoge informes de fallos técnicos para resolver errores de estabilidad.</p>
+
+      <h3>2.5. Compras dentro de la aplicación</h3>
+      <p>Las compras son procesadas exclusivamente por <strong>Google Play</strong>. La aplicación nunca tiene acceso a los datos de tu tarjeta. <strong>RevenueCat</strong> valida el recibo de compra para entregarte las monedas o el desbloqueo adquirido.</p>
+
+      <h2>3. Proveedores de servicios</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Proveedor</th>
+            <th>Finalidad</th>
+            <th>Política de privacidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Firebase</td>
+            <td>Autenticación, base de datos, analítica y fallos</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank">Ver política</a></td>
+          </tr>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Publicidad en la aplicación</td>
+            <td><a href="https://policies.google.com/technologies/ads" target="_blank">Ver política</a></td>
+          </tr>
+          <tr>
+            <td>Google Play</td>
+            <td>Procesamiento de pagos y compras</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank">Ver política</a></td>
+          </tr>
+          <tr>
+            <td>RevenueCat</td>
+            <td>Gestión y validación de suscripciones y compras</td>
+            <td><a href="https://www.revenuecat.com/privacy" target="_blank">Ver política</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Tus derechos y eliminación de cuenta</h2>
+      <p>Tienes derecho a acceder, rectificar o eliminar todos tus datos en cualquier momento.</p>
+      <p>
+        Para conocer el procedimiento de borrado de cuenta tanto desde dentro de la app como sin ella instalada, visita la página oficial de <a href="/borrado-cuenta.html"><strong>Solicitud de Borrado de Cuenta y Datos</strong></a>.
+      </p>
+
+      <h2>5. Contacto</h2>
+      <p>Para cualquier consulta o ejercicio de derechos, puedes escribir directamente a <strong>bolskapps@gmail.com</strong>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        © 2026 Bolskapps. Todos los derechos reservados. | Contacto: <a href="mailto:bolskapps@gmail.com">bolskapps@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
